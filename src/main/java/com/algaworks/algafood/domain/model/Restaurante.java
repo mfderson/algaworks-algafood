@@ -8,20 +8,19 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Data
 @Entity
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Restaurante {
 
+    @EqualsAndHashCode.Include
     @Id
-    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    @Getter @Setter
     private String nome;
 
     @Column
-    @Getter @Setter
     private BigDecimal taxaFrete;
 }

@@ -7,16 +7,16 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+@Data
 @Entity
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cozinha {
 
+    @EqualsAndHashCode.Include
     @Id
-    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    @Getter @Setter
     private String nome;
 }
