@@ -1,5 +1,6 @@
 package com.algaworks.algafood.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -17,6 +18,7 @@ public class Cozinha {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonProperty("titulo") // Define o nome da propriedade no json/xml
     @Column(nullable = false)
     private String nome;
 }
